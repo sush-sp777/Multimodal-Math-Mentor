@@ -173,4 +173,14 @@ GROQ_API_KEY=your_api_key_here
 streamlit run app.py
 ```
 ---
+## 👨‍💻 Author
+
+**Sushant Patil**
+
+Generative AI Engineer
+
+🔗 https://github.com/sush-sp777
+🔗 https://www.linkedin.com/in/sushant-patil-9a05ab2a4/
+
+---
 
