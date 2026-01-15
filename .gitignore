@@ -1,3 +1,10 @@
-/venv
-/__pycache__
+# env
 .env
+
+# virtual env
+venv/
+.env/
+
+# python cache
+__pycache__/
+*.pyc
