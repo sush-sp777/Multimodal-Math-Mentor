@@ -3,10 +3,11 @@
 - Multimodal Math Solver using RAG + Agents + HITL + Memory
 ---
 
-## 🚀 Live Demo
+## 🚀 Live Demo 
 
 Try the app **Streamlit**:  
 [🔗 Live Demo](https://op6qxzcadcwpabboswy76u.streamlit.app/)
+
 ---
 
 ## 📌 Overview
@@ -63,6 +64,38 @@ Explainer Agent (step-by-step solution)
         ↓
 User Feedback → Memory (FAISS)
 ```
+
+```
+flowchart TD
+    A[User] --> B[Streamlit UI]
+
+    B -->|Text Input| C[Parser Agent]
+    B -->|Image Upload| D[OCR - EasyOCR]
+    B -->|Audio Upload| E[ASR - Whisper]
+
+    D --> C
+    E --> C
+
+    C -->|Structured Problem| F[Intent Router Agent]
+
+    F --> G[Retriever (FAISS RAG)]
+    G --> H[Solver Agent]
+
+    H --> I[Verifier / Critic Agent]
+
+    I -->|Confident| J[Explainer Agent]
+    I -->|Uncertain| K[HITL Approval UI]
+
+    K -->|Human Approved| H
+    K -->|Human Edited| C
+
+    J --> L[Final Answer + Explanation]
+    L --> M[Confidence Score]
+
+    L --> N[Memory Store (FAISS)]
+    N --> G
+```
+
 ---
 ## 🤖 Agents Overview
 1️⃣ Parser Agent
@@ -180,6 +213,17 @@ GROQ_API_KEY=your_api_key_here
 streamlit run app.py
 ```
 ---
+
+## 🧪 Evaluation Summary
+
+- OCR inaccuracies handled via Human-in-the-Loop correction
+- Ambiguous inputs correctly trigger HITL
+- RAG retrieves relevant math formulas and templates
+- Multi-agent system ensures correctness and explainability
+- Memory layer improves future responses using past approvals
+
+---
+
 ## 👨‍💻 Author
 
 **Sushant Patil**
