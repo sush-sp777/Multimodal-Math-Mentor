@@ -2,6 +2,13 @@
 
 - Multimodal Math Solver using RAG + Agents + HITL + Memory
 ---
+
+## 🚀 Live Demo
+
+Try the app **Streamlit**:  
+[🔗 Live Demo](https://op6qxzcadcwpabboswy76u.streamlit.app/)
+---
+
 ## 📌 Overview
 
 AI Math Mentor is an end-to-end multimodal AI application designed to solve JEE-level math problems reliably.
